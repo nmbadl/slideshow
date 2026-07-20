@@ -2,7 +2,7 @@
 
 ## Publish to GitHub Pages
 
-This repository already includes a GitHub Actions workflow at `/home/runner/work/slideshow/slideshow/.github/workflows/pages.yml` that deploys on:
+This repository already includes a GitHub Actions workflow at `.github/workflows/pages.yml` that deploys on:
 - push to `main`
 - manual run (`workflow_dispatch`)
 
