@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Our Adventures Together ✦</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+
+  <!-- animated backdrop + particles -->
+  <div class="bg-gradient"></div>
+  <div class="particles" id="particles"></div>
+
+  <!-- slides -->
+  <div class="stage" id="stage">
+
+    <!-- Intro / Title -->
+    <section class="slide intro">
+      <div class="photo" style="background-image:url('images/photo3.jpg')"></div>
+      <div class="caption">
+        <span class="kicker">A Little Story of Us</span>
+        <h1>Our Adventures<br>Together</h1>
+        <div class="hint"><span>▶ Click, swipe, or use arrow keys to begin</span></div>
+      </div>
+    </section>
+
+    <!-- Photo 1 -->
+    <section class="slide">
+      <div class="photo" style="background-image:url('images/photo1.jpg')"></div>
+      <div class="caption">
+        <span class="kicker">On Top of the World</span>
+        <h2>Higher Together</h2>
+        <p>Blue skies, endless green hills, and the best view of all — you.</p>
+      </div>
+    </section>
+
+    <!-- Photo 2 -->
+    <section class="slide">
+      <div class="photo" style="background-image:url('images/photo2.jpg')"></div>
+      <div class="caption">
+        <span class="kicker">Golden Hour</span>
+        <h2>Chasing Sunsets</h2>
+        <p>Where the mountains meet the sky and every moment glows a little brighter.</p>
+      </div>
+    </section>
+
+    <!-- Photo 3 -->
+    <section class="slide">
+      <div class="photo" style="background-image:url('images/photo3.jpg')"></div>
+      <div class="caption">
+        <span class="kicker">Cloudy but Cozy</span>
+        <h2>Any Weather, Any Peak</h2>
+        <p>Rain or shine, the summit's always sweeter side by side.</p>
+      </div>
+    </section>
+
+    <!-- Photo 4 -->
+    <section class="slide">
+      <div class="photo" style="background-image:url('images/photo4.jpg')"></div>
+      <div class="caption">
+        <span class="kicker">Our Greatest Adventure</span>
+        <h2>Party of Three</h2>
+        <p>The best trail we ever took led us right here — home, together.</p>
+      </div>
+    </section>
+
+    <!-- Photo 5 -->
+    <section class="slide">
+      <div class="photo" style="background-image:url('images/photo5.jpg')"></div>
+      <div class="caption">
+        <span class="kicker">Memory Lane</span>
+        <h2>Another Beautiful Stop</h2>
+        <p>One more frame from our journey, full of laughter and little moments.</p>
+      </div>
+    </section>
+
+    <!-- Photo 6 -->
+    <section class="slide">
+      <div class="photo" style="background-image:url('images/photo6.jpg')"></div>
+      <div class="caption">
+        <span class="kicker">Still Smiling</span>
+        <h2>Hearts in Sync</h2>
+        <p>Every adventure feels brighter when we take each step together.</p>
+      </div>
+    </section>
+
+    <!-- Photo 7 -->
+    <section class="slide">
+      <div class="photo" style="background-image:url('images/photo7.jpg')"></div>
+      <div class="caption">
+        <span class="kicker">New Views</span>
+        <h2>More to Explore</h2>
+        <p>Fresh paths, familiar hands, and stories we’ll keep telling forever.</p>
+      </div>
+    </section>
+
+    <!-- Photo 8 -->
+    <section class="slide">
+      <div class="photo" style="background-image:url('images/photo8.jpg')"></div>
+      <div class="caption">
+        <span class="kicker">Forever Favorite</span>
+        <h2>Us, Always</h2>
+        <p>The best destination has always been right beside you.</p>
+      </div>
+    </section>
+
+    <!-- Outro -->
+    <section class="slide outro">
+      <div class="photo" style="background-image:url('images/photo2.jpg')"></div>
+      <div class="caption">
+        <span class="kicker">To Be Continued...</span>
+        <h2>Here's to the Next <span class="heart">♥</span> Adventure</h2>
+        <p>Thanks for reliving the memories with us.</p>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- UI -->
+  <div class="ui progress-track"><div class="progress-fill" id="progress"></div></div>
+
+  <button class="ui arrow prev" id="prev" aria-label="Previous">‹</button>
+  <button class="ui arrow next" id="next" aria-label="Next">›</button>
+
+  <div class="ui toolbar">
+    <button class="btn" id="playBtn" title="Autoplay">▶</button>
+    <button class="btn" id="musicBtn" title="Music">♪</button>
+    <button class="btn" id="fsBtn" title="Fullscreen">⛶</button>
+  </div>
+
+  <div class="ui dots" id="dots"></div>
+  <div class="ui counter" id="counter"><b>1</b> / 10</div>
+
+  <!-- soft ambient background music (royalty-free) -->
+  <audio id="music" loop preload="none">
+    <source src="https://cdn.pixabay.com/download/audio/2022/01/18/audio_dc39bde808d.mp3?filename=relaxing-mountains-rivers-streams-running-water-18178.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
