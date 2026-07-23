@@ -56,6 +56,30 @@
     if (playing) { restartTimer(); } else { clearInterval(timer); }
   }
 
+  function startMusic() {
+    if (!music) return;
+    if (music.paused) {
+      music.volume = 0.35;
+      music.play().then(() => {
+        musicBtn.classList.add('on');
+        musicBtn.setAttribute('title', 'Music on');
+      }).catch(() => {
+        musicBtn.classList.remove('on');
+        musicBtn.setAttribute('title', 'Music');
+      });
+    } else {
+      musicBtn.classList.add('on');
+      musicBtn.setAttribute('title', 'Music on');
+    }
+  }
+
+  function stopMusic() {
+    if (!music) return;
+    music.pause();
+    musicBtn.classList.remove('on');
+    musicBtn.setAttribute('title', 'Music');
+  }
+
   /* ---------- controls ---------- */
   document.getElementById('next').addEventListener('click', (e) => { e.stopPropagation(); next(); });
   document.getElementById('prev').addEventListener('click', (e) => { e.stopPropagation(); prev(); });
@@ -64,12 +88,9 @@
   musicBtn.addEventListener('click', (e) => {
     e.stopPropagation();
     if (music.paused) {
-      music.volume = 0.35;
-      music.play().then(() => musicBtn.classList.add('on'))
-                  .catch(() => { /* autoplay blocked; needs gesture (this is one) */ });
+      startMusic();
     } else {
-      music.pause();
-      musicBtn.classList.remove('on');
+      stopMusic();
     }
   });
 
@@ -147,6 +168,19 @@
 
   /* ---------- init ---------- */
   render();
+  const beginMusic = () => {
+    startMusic();
+    document.removeEventListener('pointerdown', beginMusic);
+    document.removeEventListener('touchstart', beginMusic);
+    document.removeEventListener('keydown', beginMusic);
+  };
+  document.addEventListener('pointerdown', beginMusic, { once: true });
+  document.addEventListener('touchstart', beginMusic, { once: true });
+  document.addEventListener('keydown', beginMusic, { once: true });
+
   // gentle auto-start of autoplay after a short beat
-  setTimeout(() => setPlaying(true), 3500);
+  setTimeout(() => {
+    setPlaying(true);
+    startMusic();
+  }, 3500);
 })();
